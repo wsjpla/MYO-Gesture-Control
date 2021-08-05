@@ -1,1 +1,1 @@
-# myo-Gesture-Recognition
+# MYO-Gesture-Recognition
