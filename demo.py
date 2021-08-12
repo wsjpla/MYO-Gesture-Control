@@ -70,6 +70,7 @@ class Plot(object):
                     self.f.write(str(self.emg_data[row][column]) + ",")
                 self.f.write(str(self.emg_data[7][column]))
                 self.f.write("\n")
+            print(m)
 
 def main():
   myo.init()
