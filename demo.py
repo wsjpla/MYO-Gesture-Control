@@ -52,25 +52,24 @@ class Plot(object):
     plt.draw()
 
   def main(self):
-    for n in range(1,6):
+    for n in range(1,4):
         print("\nGesture " + str(n))
-        for count in range(1,6):
+        for count in range(1,4):
             print(str(count)+"......")
             for num in range(1,10):
                 self.update_plot()
-                plt.pause(0.02)
-        for m in range(1,10):   
+                plt.pause(0.01)
+        for m in range(1,1000):   
             self.update_plot()
-            plt.pause(0.02)
-            filename = "emg_data/Gesture_"+str(n)+"_"+str(m)+".txt"
+            plt.pause(0.01)
+            filename = "emg_data/Gesture"+str(n)+"_Example"+str(m)+".txt"
             self.f = open(filename,"w+")
             for column in range(0,200):
-                self.f.write(str(self.emg_data[:,column]))
-                #for row in range(0,8):
-                #    self.f.write(str(self.emg_data[row][column]) + " ")
+                #self.f.write(str(self.emg_data[:,column]))
+                for row in range(0,7):
+                    self.f.write(str(self.emg_data[row][column]) + ",")
+                self.f.write(str(self.emg_data[7][column]))
                 self.f.write("\n")
-
-            
 
 def main():
   myo.init()
