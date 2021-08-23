@@ -8,8 +8,7 @@ import serial
 import myo
 import numpy as np
 
-ser=serial.Serial("com5",9600,timeout=1)
-
+ser=serial.Serial("com6",9600,timeout=1)
 class EmgCollector(myo.DeviceListener):
   """
   Collects EMG data in a queue with *n* maximum number of elements.
@@ -57,7 +56,7 @@ class Plot(object):
 
   def main(self):
     print("Relax state:")
-    for count in range(1,4):
+    for count in range(1,6):
             print(str(count)+"......")
             for num in range(1,10):
                 self.update_plot()
@@ -74,7 +73,7 @@ class Plot(object):
     am_min = am_min/n_c
     print(am_min)    
     print("Maximum grip strength:")
-    for count in range(1,4):
+    for count in range(1,6):
             print(str(count)+"......")
             for num in range(1,10):
                 self.update_plot()
