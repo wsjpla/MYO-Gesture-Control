@@ -50,20 +50,24 @@ class Plot(object):
         data = np.concatenate([np.zeros(self.n - len(data)), data])
       g.set_ydata(data)
     plt.draw()
+# 1'< fist >', 2<finger_spread>, 3'< thumb >', 4 '< 1_finger_type >', 5'< 2_fingers_type >', 6'< V_gesture >', 7'< relax >']
 
   def main(self):
-    for n in range(1,4):
+    for n in range(1,8):
         print("\nGesture " + str(n))
         for count in range(1,4):
             print(str(count)+"......")
             for num in range(1,10):
                 self.update_plot()
                 plt.pause(0.01)
-        for m in range(1,1000):   
+        # for m in range(1,500):
+        # self.update_plot()
+        # plt.pause(0.01)
+        filename = "WangZirui/20/"+str(n)+".txt"
+        self.f = open(filename,"w+")
+        for m in range(1,25):
             self.update_plot()
             plt.pause(0.01)
-            filename = "emg_data/Gesture"+str(n)+"_Example"+str(m)+".txt"
-            self.f = open(filename,"w+")
             for column in range(0,200):
                 #self.f.write(str(self.emg_data[:,column]))
                 for row in range(0,7):
@@ -71,7 +75,7 @@ class Plot(object):
                 self.f.write(str(self.emg_data[7][column]))
                 self.f.write("\n")
             print(m)
-            self.f.close()
+        self.f.close()
 
 def main():
   myo.init()
