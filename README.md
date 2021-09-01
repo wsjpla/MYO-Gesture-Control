@@ -8,9 +8,13 @@
 
 ## Usage
 ```dataset.py```: Record EMG signals to make datasets for model training
+
 ```train_model```: Train the CNN model
+
 ```ges_rec_online```: Achieve real-time recognition to control a humanoid manipulator (uHand 2.0)
+
 ```decode_grip_strength.py```: Decode the relative strength of grip force according to the signal amplitude
+
 
 ## 7 gestures
 < fist >
