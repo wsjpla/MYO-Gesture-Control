@@ -1,12 +1,12 @@
 # MYO-Gesture-Control
 
-## Requirement
+## Requirement:
 * myo-python
 * Numpy
 * Scikit-learn
 * Tensorflow
 
-## Usage
+## Usage:
 ```dataset.py```: Record EMG signals to make datasets for model training
 
 ```train_model```: Train the CNN model
@@ -16,7 +16,7 @@
 ```decode_grip_strength.py```: Decode the relative strength of grip force according to the signal amplitude
 
 
-## 7 gestures
+## 7 gestures:
 < fist >
 < finger_spread >
 < thumb >
